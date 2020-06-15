@@ -1,0 +1,23 @@
+version: '3'
+services:
+  # 服务名称
+  oracle:
+    # 容器名称
+    container_name: oracle
+    # 镜像名称
+    image: oracle:8
+    # 暴露的端口号
+    ports:
+      - "1521:1521"
+    # 设置权限 ：拥有root权限
+    privileged: true
+    
+    networks:
+      - default
+  
+
+networks:
+ default:
+  external:
+    name: agannet
+
